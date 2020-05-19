@@ -1,0 +1,52 @@
+<html>
+<head>
+
+<center><h1>Simple Calculator</h1></center>
+<script type="text/javascript">
+function displynum(n1)
+{
+	calcform.txt1.value=calcform.txt1.value+n1;
+}
+</script>
+<style>
+.button {
+  background-color: white;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {border: 20px;}
+</style>
+</head>
+<center>
+<body bgcolor="red">
+<form name=calcform>
+<div class="button">
+<center><input type=text name=txt1 style="text-align:right"><br>
+<input type=button name=btn9 value=9 Onclick="displynum(btn9.value)">
+<input type=button name=btn8 value=8 Onclick="displynum(btn8.value)">
+<input type=button name=btn7 value=7 Onclick="displynum(btn7.value)">
+<input type=button name=addbtn value=+ Onclick="displynum(addbtn.value)"><br>
+<input type=button name=btn6 value=6 Onclick="displynum(btn6.value)">
+<input type=button name=btn5 value=5 Onclick="displynum(btn5.value)">
+<input type=button name=btn4 value=4 Onclick="displynum(btn4.value)">
+<input type=button name=subbtn value=- Onclick="displynum(subbtn.value)"><br>
+<input type=button name=btn3 value=3 Onclick="displynum(btn3.value)">
+<input type=button name=btn2 value=2 Onclick="displynum(btn2.value)">
+<input type=button name=btn1 value=1 Onclick="displynum(btn1.value)">
+<input type=button name=btnmul value=* Onclick="displynum(btnmul.value)"><br>
+<input type=button name=btn0 value=0 Onclick="displynum(btn0.value)">
+<input type=button name=potbtn value=. Onclick="displynum(potbtn.value)">
+<input type=button name=eqlbtn value== Onclick="txt1.value=eval(txt1.value)">
+<input type=button name=divbtn value=/ Onclick="displynum(divbtn.value)">
+</div>
+</form>
+</body>
+</center>
+</html>
