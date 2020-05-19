@@ -1,0 +1,335 @@
+<html>
+<head>
+ <title>Js Validation</title>     
+<style>
+body  {
+            background-image: url("image2.jpg");
+                     }
+</style>
+
+ <script type="text/javascript">
+ function validateForm()
+  {
+      var name=document.getElementById("Name").value;
+	  var la=document.getElementById("last1").value;
+      var age=document.getElementById("Age").value;
+      var gender= document.getElementsByName("gender");
+      var yob=document.getElementById("YOB").value;
+      var adress=document.getElementById("ad").value;
+      var e = document.getElementById("state");
+      var strUser = e.options[e.selectedIndex].value;
+      var e1 = document.getElementById("branch");
+      var strUser1 = e.options[e1.selectedIndex].value;
+      var e2 = document.getElementById("skills");
+      var strUser2 = e.options[e2.selectedIndex].value;
+      var no=document.getElementById("phone").value;
+      var x=document.getElementById("e").value;
+var qz=document.getElementById("up").value;
+var qz1=document.getElementById("sp").value;
+var m1=document.getElementById("tp").value;
+var m2=document.getElementById("pp").value;
+var yo=document.getElementById("yop").value;
+var tk=document.getElementById("r").value;
+var njk=document.getElementById("DP").value;
+      if(name=="")
+      {
+          alert("Name field empty");
+	      Name.focus();
+          return false;
+	  }
+   
+	  if(age=="")
+      {
+	    alert("Age field empty");
+	    Age.focus();   
+		return false;
+	  }
+	  if(age<20||age>80)
+      {
+        alert("Age value between 20 and 80 ");
+	    Age.focus();    
+	    return false;
+	  }
+	  else
+	  {
+      for(i=0;i<age.length;i++)
+	  {
+      if(!(age.charAt(i)>='0'&&age.charAt(i)<='9'))
+      {
+        alert("enter  number only in age field");
+        Age.focus();   
+		return false;  
+      }
+	  }
+   }
+    if ( (gender[0].checked == false ) && ( gender[1].checked == false ) ) 
+    {
+        alert ( "Please choose your Gender: Male or Female" ); 
+        return false;
+	}
+   if(yob=="")
+   {
+       alert("Year of birth field empty");
+	   YOB.focus();
+       return false;
+   }
+   else if(2019-age!=yob)
+	{
+		alert("enter exact year of birth")
+		YOB.focus();
+		document.getElementById("YOB").value="";
+		return false;
+}
+   if(adress=="")
+   {
+       alert("Address field empty");
+	ad.focus();
+       return false;
+   }
+   if(no=="")
+   {
+       alert("phone field empty");
+	phone.focus();
+       return false;
+   }
+    if(no.length>10||no.length<10)
+   {
+       alert("invalid phone number");
+	phone.focus();
+       return false;
+   }
+   else
+   {
+      for(i=0;i<no.length;i++)
+	  {
+      if(!(no.charAt(i)>='0'&&no.charAt(i)<='9'))
+      {
+          alert("enter   only numbers in phone field");
+          return false;
+	  }
+	  }
+   }
+ if(strUser==0) 
+    {
+       alert("select your state");
+       return false;
+	}
+ if(x=="")
+    {
+        alert("email field empty");
+	e.focus();
+        return false;
+   }
+   else
+   {
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+        {
+            alert("Not a valid e-mail address");
+	e.focus();
+            return false;
+    }
+    }
+if(qz=="")
+{
+alert("upload your photo");
+up.focus();
+return false;
+}
+if(qz1=="")
+{
+alert("upload your  Signature photo");
+sp.focus();
+return false;
+}
+if(tk=="")
+{
+alert("the resume should not be empty");
+r.focus();
+return false;
+}
+if(m1=="")
+{
+alert("the tenth percentage should not be empty");
+tp.focus();
+return false;
+}
+
+if(m2=="")
+{
+alert("the puc percentage should not be empty");
+pp.focus();
+return false;
+}
+
+if(njk=="")
+{
+alert("the degree percentage should not be empty");
+DP.focus();
+return false;
+}
+
+ if(strUser1==0) 
+    {
+       alert("select your Specialization(Branch)");
+       return false;
+	}
+
+if(yo=="")
+{
+alert("the year of passing should not be empty");
+yop.focus();
+return false;
+}
+if(yo<2020||yo>2022)
+{
+alert("NOT ELIGIBLE FOR REGISTER !!!!The year of passing value between 2020 and 2022");
+yop.focus();
+return false;
+}
+
+ if(strUser2==0) 
+    {
+       alert("select atleast one Techincal skills");
+       return false;
+	}
+   
+    
+    alert ("Succesfully Register.Your Job Application is Proceed.Our Team Will Contact You!!Good Day!!  ")
+    return true;
+ }
+</script>
+
+</head>
+<body bgcolor="brown">
+<center>
+<table border="0" bgcolor="gainsboro">
+<form  name="UserReg" action="User.html" method="post"  onSubmit="return validateForm()"> 
+<fieldset>
+<legend style="color:red">Job Application</legend>
+
+   <tr>
+       <td height="28" align="right">FirstName :&nbsp;</td>
+       <td height="28"><input type="text"  id="Name" size="30" placeholder="Avinash"  pattern="[A-Za-z]{3}"  /></td> 
+   </tr>
+    <tr>
+       <td height="28"  align="right">MiddleName :&nbsp;</td>
+      <td height="28"><input type="text" id="mina" size="30"   /></td>
+  </tr>
+  <tr>
+       <td height="28"  align="right">LastName :&nbsp;</td>
+      <td height="28"><input type="text" id="last1" size="30"  pattern="[A-Za-z]{10}" /></td>
+  </tr>
+ <tr>
+       <td height="28"  align="right">Gender  :&nbsp;</td>
+      <td height="28"><input type="radio" name="gender" value="male"> Male
+	 <input type="radio" name="gender" value="female"> Female</td>
+  </tr>
+  <tr>
+       <td height="28"  align="right">Year of Birth  :&nbsp;</td>
+      <td height="28"><input type="text" id="YOB" size="30" placeholder="enter the value"  /></td>
+  </tr>
+   <tr>
+       <td height="28"  align="right" valign="top">Address  :&nbsp;</td>
+      <td ><textarea rows="5" cols="30" id="ad"></textarea><td>
+  </tr>
+<tr>
+       <td height="28"  align="right">Mob_No  :&nbsp;</td>
+      <td height="28"><input type="text" id="phone" size="25" placeholder="enter ten digit number" /><td>
+  </tr>
+
+ <tr>
+       <td height="28"  align="right">State  :&nbsp;</td>
+      <td height="28">
+   <select id="state">
+	<option value="0" selected>select</option>
+  <option value="1">Kerala</option>
+  <option value="2" >Karnataka</option>
+  <option value="3">AndraPradesh</option>
+  <option value="4">Tamilnadu</option>
+</select>
+</td>
+  </tr>
+ 
+   <tr>
+       <td height="28"  align="right">Email_id :&nbsp;</td>
+      <td height="28"><input type="text" id="e" size="25"  /></td>
+  </tr>
+  
+<tr>
+       <td height="28"  align="right">Upload_Photo :&nbsp;</td>
+      <td height="28"><input type="file" id="up" size="25"  /></td>
+  </tr>
+<tr>
+       <td height="28"  align="right">Signature_photo :&nbsp;</td>
+      <td height="28"><input type="file" id="sp" size="25"  /></td>
+  </tr>
+<tr>
+       <td height="28"  align="right">Upload_Resume :&nbsp;</td>
+      <td height="28"><input type="file" id="r" size="25"  /></td>
+  </tr>
+
+<tr>
+       <td height="28"  align="right">Tenth_Percentage :&nbsp;</td>
+      <td height="28"><input type="text" id="tp" size="57"  placeholder="Type Percentage(if its is CGPA multiply with 9.5) Ex: 92.22" pattern="[0-9]{2}.[0-9]{2}" /></td>
+  </tr>
+<tr>
+       <td height="28"  align="right">Puc_Percentage :&nbsp;</td>
+      <td height="28"><input type="text" id="pp" size="57"  placeholder="Type Percentage(if its is CGPA multiply with 9.5) Ex: 86.22" pattern="[0-9]{2}.[0-9]{2}"/></td>
+  </tr>
+<tr>
+       <td height="28"  align="right">Degree_Percentage:&nbsp;</td>
+      <td height="28"><input type="text" id="DP" size="57"  placeholder="Enter Only Grades(A to D || a to d)" pattern="[A-Da-d]{1}"/></td>
+  </tr>
+<tr>
+      <td height="28" align="right">Specialization:&nbsp;</td>
+      <td height="28">
+<select id="branch">
+<option value="0"  selected>select</option>
+  <option value="1" >CSE</option>
+  <option value="2" >IT</option>
+  <option value="3">ECE</option>
+  <option value="4">MEC</option>
+ <option value="5">Civil</option>
+ <option value="6">PET</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td height="28" align="right">Year_of_Passing:&nbsp;</td>
+<td height="28"><input type="number" size="35" id="yop" placeholder="enter the value"></td>
+</tr>
+<tr>
+      <td height="28" align="right">Technical Skills:&nbsp; </br>(Hold Ctrl To Select Multiple)&nbsp;</td>
+      <td height="28">
+<select id="skills" multiple>
+<option value="0" selected>select</option>
+  <option value="1">C</option>
+  <option value="2" >C++</option>
+  <option value="3">Java</option>
+  <option value="4">Testing</option>
+ <option value="5">DBMS</option>
+ <option value="6">CCNA</option>
+</select>
+
+</td>
+</tr>
+<tr>
+       <td height="35"></td>
+       <td height="35"><input type="submit" value="Submit" name="UserSigUp"  /></td> 
+	
+   </tr>
+</tr>
+<tr>
+       <td height="35"></td>
+       <td height="35"><input type="reset" value="Reset" name="UserSigUp"  /></td> 
+	
+   </tr>
+</fieldset>
+</form>
+</table>
+</center>
+</body>
+</html>
