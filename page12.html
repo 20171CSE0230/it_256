@@ -1,0 +1,19 @@
+<html>
+<body>
+<script>
+n=parseInt(prompt("Enter int value:"))
+big=0;
+while(n>0)
+{
+ a=n%10;
+ if(big<a)
+   big=a;
+
+n=Math.floor(n/10);
+}
+document.write("biggest digit is:"+big)
+
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+function validateCheckbox()
+{
+var s="U Skilled In<br>"
+if(document.frm.C.checked)
+  s+="C<br>"
+if(document.frm.Cpp.checked)
+  s+="Cpp<br>"
+if(document.frm.Java.checked)
+  s+="Java<br>"
+if(document.frm.Oracle.checked)
+  s+="Oracle<br>"
+
+
+document.write(s)
+
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<u>Selecte the Courses U Skilled In</u><br>
+<input type="checkbox" name="C" checked>C<br>
+<input type="checkbox" name="Cpp">Cpp<br>
+<input type="checkbox" name="Java">Java<br>
+<input type="checkbox" name="Oracle">Oracle<br>
+<input type="checkbox" name="Python">Python<br>
+<input type="checkbox" name="Dotnet">DotNet<br>
+<input type=button onClick="validateCheckbox()" value="Submit">
+
+</form>
+</body>
+</html>

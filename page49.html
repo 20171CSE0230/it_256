@@ -1,0 +1,22 @@
+<script>
+function fun1()
+{
+var uname=document.getElementById("uid").value
+pwd=document.getElementById('pss').value
+document.getElementById('uid').style.color="Red"
+document.getElementById("userid").innerHTML=uname
+document.getElementById("password").innerHTML=pwd
+}
+</script>
+<body>
+<form>
+User Name<input type="text" id="uid">
+<br>
+Password <input type="password" id="pss">
+<br>
+<input type=button value=select onClick=fun1()>
+<br>User id:<p id="userid">
+<br>Password :<p id="password">
+</form>
+</body>
+
